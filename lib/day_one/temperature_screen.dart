@@ -30,7 +30,7 @@ class _TemperatureScreenState extends State<TemperatureScreen> {
     double temp = double.parse(value);
     if (temp != null) {
       double result = (temp * 9.0 / 5.0) + 32.0;
-      _controllerF.text = result.toStringAsFixed(1);
+      _controllerF.text = result.toStringAsFixed(2);
     } else {
       _controllerF.text = '';
     }
@@ -43,7 +43,7 @@ class _TemperatureScreenState extends State<TemperatureScreen> {
     double temp = double.parse(value);
     if (temp != null) {
       double result = (temp - 32.0) * 5.0 / 9.0;
-      _controllerC.text = result.toStringAsFixed(1);
+      _controllerC.text = result.toStringAsFixed(2);
     } else {
       _controllerC.text = '';
     }
@@ -54,11 +54,11 @@ class _TemperatureScreenState extends State<TemperatureScreen> {
     if (_controllerC.text != '') {
       temp = double.parse(_controllerF.text);
       result = temp * 9.0 / 5.0 + 32.0;
-      _controllerF.text = result.toStringAsFixed(1);
+      _controllerF.text = result.toStringAsFixed(2);
     } else if (_controllerF.text != '') {
       temp = double.parse(_controllerF.text);
       result = (temp - 32.0) * 5.0 / 9.0;
-      _controllerC.text = result.toStringAsFixed(1);
+      _controllerC.text = result.toStringAsFixed(2);
     }
     FocusScope.of(context).unfocus();
   }
