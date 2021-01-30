@@ -18,6 +18,9 @@ class _TodoListScreenState extends State<TodoListScreen> {
   }
 
   void _addNewTodo(String todoName) {
+    if (todoName.isEmpty) {
+      return;
+    }
     setState(() {
       TodoModel model = TodoModel(title: todoName);
       _list.add(model);
